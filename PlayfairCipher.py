@@ -1,4 +1,6 @@
-#Function that return matriz-key
+#              ANDRES DUVAN CHAVES MOSQUERA
+#              UNIVERSIDAD NACIONAL DE COLOMBIA
+
 def calcularMatriz(Key):
     
     matriz=[[-1,-1,-1,-1,-1],[-1,-1,-1,-1,-1],[-1,-1,-1,-1,-1],[-1,-1,-1,-1,-1],[-1,-1,-1,-1,-1]]
