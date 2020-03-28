@@ -3,9 +3,8 @@ def CalcularInversoModular(entero,modular):
     for i in range(0,modular+1):
         if (i*entero)%modular == 1:
             inverso=i
-    
+            
     return inverso
-
 
 def Encriptar(TextoPlano,Clave):
     Encriptado = ""
@@ -63,20 +62,36 @@ def DesEncriptar(TextoCifrado,Clave):
         Plano+=chr(((C*matrizInversa[1] + D*matrizInversa[3])%26)+65)
 
     return Plano
-# 11,8,3,7
+
+
+
+print("\n                   Playfair Cipher\n")
+print(" Please, insert the cipher matrix")
 key=[-1,-1,-1,-1]
-print('inserte la cordenada 1,1')
+print('inserte la cordenada 1,1: ',end="")
 key[0]=int(input())
-print('inserte la cordenada 1,2')
+print('inserte la cordenada 1,2: ',end=""))
 key[1]=int(input())
-print('inserte la cordenada 2,1')
+print('inserte la cordenada 2,1: ',end=""))
 key[2]=int(input())
-print('inserte la cordenada 2,2')
+print('inserte la cordenada 2,2: ',end=""))
 key[3]=int(input())
+print("\n  The encryption matrix is:\n")
+begin=1
+while(begin==1):
+    print(" Options: \n 0. To close the program.\n 1. To encrypt\n 2. To decrypt\n Enter value: ", end="")
+    instruction=input()
+    if(instruction=='1'):
+        print("  Enter the phrase to encrypt in CAPITAL LETTER: ", end="")
+        plainText=input()
+        print("  His encryption was: ",DesEncriptar(plainText,key))
+    else:
+        if(instruction=='2'):
+            print("  Enter the phrase to Decrypt in CAPITAL LETTER:", end="")
+            encryptText=input()
+            print("  Your Decryption was: ",Encriptar(encryptText,key))
+        else: begin=0
+    print("\n  Press enter to continue...")
+    input()
 
-print(key)
-encriptado=Encriptar('HOLA',key)
-
-print(encriptado)
-print(DesEncriptar(encriptado,key))
-
+# 11,8,3,7
